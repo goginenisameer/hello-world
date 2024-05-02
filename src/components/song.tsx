@@ -1,13 +1,17 @@
+import { SongType } from "./songList";
+
 const Song=(props:SongProps):JSX.Element =>{
+
+   
+
     return (
     <div>
-    <li> {props.title} by {props.artist}</li>
+    <li> {props.song.title} by {props.song.artist} has {props.song.votes}</li>
+    <button onClick={props.VoteFunction}>Vote</button>
     </div>
+    
     )
 }
 
 export default Song;
-type SongProps={
-    title: string,
-    artist: string
-}
+type SongProps = {song: SongType, VoteFunction : ()=>void};
